@@ -9,7 +9,7 @@ Technologies:
  Tasks:
   - [x] Create input form for user's name and message
   - [x] Create area to display messages from DB
-  - [ ] POST user's message to the DB
+  - [x] POST user's message to the DB
   - [x] Use a GET request to get messages from the DB
-  - [ ] Append messages to DOM
+  - [x] Append messages to DOM
   - [ ] Style everything using Bootstrap

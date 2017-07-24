@@ -18,11 +18,24 @@ app.get('/messages', function(req, res){
       res.sendStatus(500);
     } else {
       console.log('DB data returned: ', data);
-      res.sendStatus(200);
+      res.send(data);
     }
   });
 }); // end of GET
 
+app.post('/messages', function(req, res){
+  // console.log('Message to add: ', req.body);
+  var addMessage = new Message(req.body);
+
+  addMessage.save(function(err, data){
+    if(err){
+      console.log('DB save error: ', err);
+      res.sendStatus(500);
+    } else {
+      res.sendStatus(201);
+    }
+  });
+}); // end of POST
 
 
 
