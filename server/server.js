@@ -4,12 +4,24 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var mongoose = require('mongoose');
 var port = 5000;
+var Message = require('./models/messages.schema.js');
 
 /** ---- Middleware ---- **/
 app.use(bodyParser.json());
 
 /** ---- Express Routes ---- */
 
+app.get('/messages', function(req, res){
+  Message.find({}, function(err, data){
+    if(err){
+      console.log('DB find error: ', err);
+      res.sendStatus(500);
+    } else {
+      console.log('DB data returned: ', data);
+      res.sendStatus(200);
+    }
+  });
+}); // end of GET
 
 
 

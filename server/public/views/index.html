@@ -9,8 +9,8 @@
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
   </head>
-  <body>
-    <div class="container">
+  <body ng-app="myApp">
+    <div class="container" ng-controller="MessageController as mc">
       <h1>Message Up</h1>
       <div class="messageSubmit">
         <input type="text" placeholder="Your Name" ng-model="name">
@@ -18,9 +18,7 @@
         <button type="submit" name="button">Submit</button>
       </div>
       <div class="messages">
-        <main ng-view>
           <!-- Messages will append here -->
-        </main>
       </div>
     </div>
   </body>
